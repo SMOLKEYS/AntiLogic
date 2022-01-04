@@ -2,7 +2,7 @@ Events.on(ContentInitEvent, () => {
     Timer.schedule(() => {
         Vars.content.blocks().each(b => {
             if(b instanceof LogicBlock) b.buildVisibility = BuildVisibility.hidden;
-            continue;
+            return;
             
             if(b instanceof LogicDisplay) b.buildVisibilty = BuildVisibility.hidden;
             return;
@@ -10,7 +10,7 @@ Events.on(ContentInitEvent, () => {
         
         Groups.build.each(b => {
             if(b instanceof LogicBlock) b.kill();
-            continue;
+            return;
             
             if(b instanceof LogicDisplay) b.kill();
             return;
